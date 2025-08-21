@@ -36,10 +36,12 @@ id = "jfivj1v6vb6o"
 
 url1 = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
 
-puxar_carta = f"https://deckofcardsapi.com/api/deck/{id}/draw/?count=2"
+puxar_carta = f'https://deckofcardsapi.com/api/deck/{id}/draw/?count=2'
 
 criar_baralho = "https://deckofcardsapi.com/api/deck/new/"
 
 def get_url():
    r = requests.post(criar_baralho, data={"jokers_enabled": True})
    print(r.text)
+
+
