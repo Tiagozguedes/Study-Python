@@ -21,6 +21,5 @@ class ListaDeRepositorios():
             for repositorio in dados_api:
                 print(repositorio['name'])
 
-# Linha 24 corrigida (agora com o nome correto 'ListaDeRepositorios')
-repositorios = ListaDeRepositorios('gustavaress') 
+repositorios = ListaDeRepositorios('Tiagozguedes') 
 repositorios.imprime_repositorios()
