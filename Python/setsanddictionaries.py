@@ -19,6 +19,7 @@ dic1 = {"nome": "Ana",
         }
 
 dicionario = {}
+
 dicionario = dict()
 
 #%%
@@ -30,7 +31,21 @@ print(dicionario1)
 print()
 #%%
 
+#conjunto vazio
 convidados = set()
+print(1 in convidados)
+print(2 not in convidados)
+
+#Métodos de manipulação entre os conjuntos
+a = {1,2,3}
+b = {3,4,5}
+print(a.union(b))
+print(a|b)
+a.intersection(b)
+print(a & b)
+print(a.difference(b))
+print(a-b)
+print(a.sysmmetric_difference(b))
 
 while True:
     convidado = input("Digite o seu nome ou sair para encerrar: ")
@@ -58,7 +73,7 @@ diference1 = list_laura.difference(list_ana)
 diference2 = list_ana.difference(list_laura)
 
 print(f'palavras comuns{comum}')
-print(f'inten  exclusivos de laura: {', '.join(diference1)}')
+print(f'intens  exclusivos de laura: {', '.join(diference1)}')
 print(f'intens exclusivos de Ana: {', '.join(diference2)}')
 print()
 
@@ -78,9 +93,68 @@ while True:
     #     "altura" : altura,
     #     "peso" : peso
     # }
-    convidados.update({'idade': idade, 'altura': altura})
+    convidados.update({'idade': idade,
+                        'altura': altura})
 
 print(convidados)
 # %%
 
+#dicionário de tuplas
+lista_de_tuplas = [("nome", "ana"),("nota", 10.0)]
+dicionario = dict(lista_de_tuplas)
 
+#estoque com conjuntos e dicionários
+estoque = {
+    "frutas": {"maça", "uva"},
+    "verduras": {"cenoura","alface"}
+}
+
+estoque["frutas"].add(("morango"))
+estoque["verduras"].add("alface")
+print(estoque)
+
+alunos = {
+    "Julia": {
+        "nota": 10,
+        "altura": 1.80
+    },
+    "Pedro": {
+        "nota": 8.5,
+        "altura": 1.75
+    },
+    "Ana": {
+        "nota": 9.0,
+        "altura": 1.68
+    }
+}
+
+# Acessando a nota de outro aluno
+print(Alunos["Pedro"]["nota"])
+
+
+#%%
+alunosdict = {}
+def media_dos_alunos(a,b):
+    return (a+b)/2
+
+while True:
+    nome = input("Digite o nome do aluno ou (sair) para ser desconectado: ")
+    
+    if nome == "sair":
+        break
+
+    idade = int(input("Digite a idade do aluno"))
+    nota1 = float(input("Digite a nota 1 do aluno"))
+    nota2 = float(input("Digite a nota 2 do aluno"))
+
+    media = media_dos_alunos(nota1, nota2)
+
+    alunosdict[nome] = {
+        "idade": idade,
+        "nota 1": nota1,
+        "nota 2": nota2,
+        "media": media
+    }
+
+print(alunosdict)
+# %%
